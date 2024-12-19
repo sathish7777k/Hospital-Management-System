@@ -1,0 +1,86 @@
+package com.login;
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.ServletException;
+import java.io.PrintWriter;
+
+@WebServlet("/AppointmentBookingServlet")
+public class AppointmentBookingServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+
+        String doctorName = req.getParameter("doctorName");
+        String specialization = req.getParameter("specialization");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<style>");
+        out.println("body {");
+        out.println("    background-image: url('img1.jpg');");
+        out.println("    background-size: cover;");
+        out.println("    font-family: Arial, sans-serif;");
+        out.println("    margin: 0;");
+        out.println("    padding: 0;");
+        out.println("    display: flex;");
+        out.println("    justify-content: center;");
+        out.println("    align-items: center;");
+        out.println("    height: 100vh;");
+        out.println("}");
+        out.println(".container {");
+        out.println("    background: rgba(255, 255, 255, 0.8);");
+        out.println("    padding: 20px;");
+        out.println("    border-radius: 10px;");
+        out.println("    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);");
+        out.println("    text-align: center;");
+        out.println("}");
+        out.println("h1 {");
+        out.println("    color: #333;");
+        out.println("    margin-bottom: 20px;");
+        out.println("}");
+        out.println("label {");
+        out.println("    display: block;");
+        out.println("    margin: 10px 0 5px;");
+        out.println("    font-weight: bold;");
+        out.println("}");
+        out.println("input[type='date'], input[type='time'] {");
+        out.println("    width: 90%;");
+        out.println("    padding: 10px;");
+        out.println("    margin-bottom: 15px;");
+        out.println("    border: 1px solid #ccc;");
+        out.println("    border-radius: 5px;");
+        out.println("    font-size: 16px;");
+        out.println("}");
+        out.println("input[type='submit'] {");
+        out.println("    background-color: #28a745;");
+        out.println("    color: white;");
+        out.println("    border: none;");
+        out.println("    padding: 10px 20px;");
+        out.println("    border-radius: 5px;");
+        out.println("    cursor: pointer;");
+        out.println("    font-size: 16px;");
+        out.println("}");
+        out.println("input[type='submit']:hover {");
+        out.println("    background-color: #218838;");
+        out.println("}");
+        out.println("</style>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<div class='container'>");
+        out.println("<h1>Book Appointment with " + doctorName + "</h1>");
+        out.println("<form action='ConfirmAppointmentServlet' method='post'>");
+        out.println("<input type='hidden' name='doctorName' value='" + doctorName + "'>");
+        out.println("<input type='hidden' name='specialization' value='" + specialization + "'>");
+        out.println("<label for='appointmentDate'>Date:</label>");
+        out.println("<input type='date' name='appointmentDate' required><br>");
+        out.println("<label for='appointmentTime'>Time:</label>");
+        out.println("<input type='time' name='appointmentTime' required><br>");
+        out.println("<input type='submit' value='Confirm'>");
+        out.println("</form>");
+        out.println("</div>");
+        out.println("</body>");
+        out.println("</html>");
+    }
+}

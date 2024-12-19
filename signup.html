@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="styles3.css"> 
+</head>
+<body>
+    <form action="userRegister" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required placeholder="Full Name">
+        
+        <div class="form-row">
+            <div class="field">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required placeholder="Enter Password">
+            </div>
+            <div class="field">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm Password">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="field">
+                <label for="contact">Contact:</label>
+                <input type="tel" name="contact" id="contact" maxlength="10" required placeholder="Mobile">
+            </div>
+            <div class="field">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required placeholder="Email">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" list="optionList" required placeholder="Select Country">
+                <datalist id="optionList">
+                    <option value="India"></option>
+                    <option value="USA"></option>
+                    <option value="Australia"></option>
+                    <option value="Canada"></option>
+                </datalist>
+            </div>
+            <div class="field">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" list="optionList" required placeholder="Select State">
+                <datalist id="optionList">
+                    <option value="UK"></option>
+                    <option value="HP"></option>
+                    <option value="AP"></option>
+                    <option value="MP"></option>
+                </datalist>
+            </div>
+        </div>
+        
+        <label for="zip">Zip Code:</label>
+        <input type="text" name="zip" id="zip" required placeholder="Postal Code">
+        
+        <br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

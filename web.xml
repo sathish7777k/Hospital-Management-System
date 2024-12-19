@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  	<param-name>jdbc.driver</param-name>
+  	<param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>jdbc.url</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>jdbc.username</param-name>
+  	<param-value>system</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>jdbc.password</param-name>
+  	<param-value>Saskutty07@</param-value>
+  </context-param>
+  
+  
+</web-app>
